@@ -1,7 +1,7 @@
 {
-  "name": "express-authentication",
+  "name": "munch-app",
   "version": "1.0.0",
-  "description": "This is express authentication",
+  "description": "This is my project two.",
   "main": "server.js",
   "directories": {
     "test": "test"
@@ -12,14 +12,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/romebell/express-authentication.git"
+    "url": "git+https://github.com/ABarranco95/munch-app-project.git"
   },
   "author": "Rome Bell",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/romebell/express-authentication/issues"
+    "url": "https://github.com/ABarranco95/munch-app-project/issues"
   },
-  "homepage": "https://github.com/romebell/express-authentication#readme",
+  "homepage": "https://github.com/ABarranco95/munch-app-project#readme",
   "dependencies": {
     "axios": "^0.21.0",
     "bcrypt": "^5.0.0",
