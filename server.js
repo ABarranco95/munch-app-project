@@ -8,6 +8,8 @@ const SECRET_SESSION = process.env.SECRET_SESSION;
 console.log(SECRET_SESSION)
 const app = express();
 
+
+
 // isLoggedIn middleware
 
 const isLoggedIn = require('./middleware/isLoggedIn');
@@ -60,7 +62,18 @@ app.get('/profile', isLoggedIn, (req, res) => {
   res.render('profile');
 });
 
-app.use('/auth', require('./routes/auth'));
+app.get('/favorites', isLoggedIn, (req, res) => {
+  res.render('favorites')
+});
+
+//Import Routes
+const favoritesRoute = require('./controllers/favorites');
+
+app.use('/favorites', favoritesRoute);
+
+app.use('/auth', require('./controllers/auth'));
+
+//
 
 
 const PORT = process.env.PORT || 3000;
