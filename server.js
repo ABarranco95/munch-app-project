@@ -77,6 +77,8 @@ app.use('/favorites', isLoggedIn, require('./controllers/favorites'));
 
 app.use('/auth', require('./controllers/auth'));
 
+app.use('/restaurants', require('./controllers/restaurant'));
+
 // app.use('/restaurant', require('.controllers/restaurant'));
 
 //

@@ -1,7 +1,12 @@
 <h2>Homepage</h2>
 
-<h3>Search Nearby Restaurants</h1>
-<form method="GET" action="/restaurant/results">
-    <input id="search" type="text" name="search" placeholder="Zipcode" />
-    <input type="submit" value="Search"/>
-</form>
+<br>
+
+<h4>Search Nearby Restaurants</h4>
+
+<div class="search-form">
+    <form class="form-inline my-2 my-lg-0" aria-label="Search" method="GET" action="restaurants/results">
+        <input class="form-control mr-sm-2" id="search" type="text" name="search" placeholder="Enter Zipcode" />
+        <input class="btn btn-outline-success my-2 my-sm-0" type="submit" value="Search" />
+    </form>
+</div>

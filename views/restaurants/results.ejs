@@ -1,2 +1,10 @@
-<h1>Search Results:</h1>
+<h3>Search Results:</h3>
 
+<% searchResultObject.forEach (restaurant => {%>
+    <div class="result">
+        <ul>
+            <li><%= restaurant.restaurant_name %></li>
+        </ul>
+        
+    </div>
+<% }); %>
