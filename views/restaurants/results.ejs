@@ -1,10 +1,14 @@
 <h3>Search Results:</h3>
 
 <% searchResultObject.forEach (restaurant => {%>
-    <div class="result">
+    <div class="results">
         <ul>
-            <li><%= restaurant.restaurant_name %></li>
+            <li><a href="<%= restaurant.restaurant_website %>"><%= restaurant.restaurant_name %></a></li>
+            <li><%= restaurant.restaurant_cuisines %></li>
+            <li><%= restaurant.address.formatted %></li>
+            <li><%= restaurant.restaurant_phone %></li>
         </ul>
+
         
     </div>
 <% }); %>
