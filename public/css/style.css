@@ -1,12 +1,46 @@
-nav ul li {
-  text-decoration: none;
-  display: inline-block;
-  margin-right: .3em;
-  color: whitesmoke;
+body {
+  background-color:#0B172A;
+  color: wheat;
+  font-family: 'Varela', sans-serif;
+}
+
+h1 {
+ text-align: center;
+ font-size: 48px;
+ padding-top: 70px;
 }
 
 
-body {
-  background-color:#0B172A;
-  color: wheat
+a:link {
+  text-decoration: none;
+}
+nav ul li {
+  display: inline-block;
+  margin-right: .3em;
+  color: whitesmoke;
+  float: right;
+  padding: 15px;
+}
+
+#logout-button {
+  background-color: red;
+  padding: 15px;
+  border-radius: 5px;
+}
+
+
+a {
+  color: whitesmoke;
+}
+
+form {
+  text-align: center;
+}
+
+form input {
+  margin: 10px;
+}
+
+form label {
+  margin: 0px 5px;
 }

@@ -62,16 +62,22 @@ app.get('/profile', isLoggedIn, (req, res) => {
   res.render('profile');
 });
 
-app.get('/favorites', isLoggedIn, (req, res) => {
-  res.render('favorites')
-});
+// app.get('/favorites', isLoggedIn, (req, res) => {
+//   res.render('favorites')
+// });
+
+// app.get('/restaurants', isLoggedIn, (req, res) => {
+//   res.render('restaurants/results')
+// })
 
 //Import Routes
-const favoritesRoute = require('./controllers/favorites');
+// const favoritesRoute = require('./controllers/favorites');
 
-app.use('/favorites', favoritesRoute);
+app.use('/favorites', isLoggedIn, require('./controllers/favorites'));
 
 app.use('/auth', require('./controllers/auth'));
+
+// app.use('/restaurant', require('.controllers/restaurant'));
 
 //
 

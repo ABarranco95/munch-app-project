@@ -44,18 +44,18 @@ axios.get(url)
                 phone: searchResultObject.restaurant_phone
 
             };
-            // console.log(searchRestObject);
-            db.favorites.findOrCreate({
-                where: { restaurant: searchRestObject.restaurant },
-                defaults: {
-                    restaurant: searchRestObject.restaurant_name,
-                    address: searchRestObject.address.formatted,
-                    phone: searchRestObject.phone,
-                }
-            }).then(([favorites, created]) => {
-                console.log(created);
-                res.render()
-            })
+            console.log(searchRestObject);
+            // db.favorites.findOrCreate({
+            //     where: { restaurant: searchRestObject.restaurant },
+            //     defaults: {
+            //         restaurant: searchRestObject.restaurant_name,
+            //         address: searchRestObject.address.formatted,
+            //         phone: searchRestObject.phone,
+            //     }
+            // }).then(([favorites, created]) => {
+            //     console.log(created);
+            //     res.render()
+            // })
         }
     }
 })
