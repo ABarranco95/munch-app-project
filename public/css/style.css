@@ -53,7 +53,13 @@ form label {
   margin: 0px 5px;
 }
 
-.results ul{
+.results ul {
+  column-count: 4;
+  column-rule: dotted 1px #333;
+  list-style-type: none;
+}
+
+.favorites ul {
   column-count: 4;
   column-rule: dotted 1px #333;
   list-style-type: none;

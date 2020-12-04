@@ -1,4 +1,4 @@
-
+require('dotenv').config();
 const express = require('express');
 const router = express.Router();
 const db = require('../models');
@@ -22,6 +22,7 @@ router.get('/results', (req, res) => {
                 res.render('restaurants/results', { searchResultObject })
             
         });
+        
 })
 // axios.get(`https://api.documenu.com/v2/restaurants/zip_code/${search}?key=${API_KEY}`)
 // .then(response => {

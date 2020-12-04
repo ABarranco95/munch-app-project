@@ -1,7 +1,7 @@
 <h3>Search Results:</h3>
-
 <% searchResultObject.forEach (restaurant => {%>
-    <div class="results">
+<div class="results">
+    <form method="POST" action="/favorites"></form>
         <ul>
             <li><a href="<%= restaurant.restaurant_website %>"><%= restaurant.restaurant_name %></a></li>
             <li><%= restaurant.restaurant_cuisines %></li>
@@ -9,6 +9,10 @@
             <li><%= restaurant.restaurant_phone %></li>
         </ul>
 
-        
-    </div>
+        <input hidden type="text" value="<%= restaurant.restaurant_name %> ">
+        <button type="submit">Add to your favorites</button>
+    </form>
+
+
+</div>
 <% }); %>
