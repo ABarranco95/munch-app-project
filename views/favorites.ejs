@@ -5,6 +5,9 @@
             <li><a href="<%= favorite.website %>"><%= favorite.restaurant %></a></li>
             <li><%= favorite.address %></li>
             <li><%= favorite.phone %></li>
+            <form method="POST" action="/restaurant/<%= favorite.restaurantId %>/?_method=DELETE">
+                <input type="submit" class="alert alert-danger" value="Remove Favorite">
+            </form>
         </ul>
     </div>
 <% }); %>

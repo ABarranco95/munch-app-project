@@ -53,11 +53,6 @@ form label {
   margin: 0px 5px;
 }
 
-.results ul {
-  column-count: 4;
-  column-rule: dotted 1px #333;
-  list-style-type: none;
-}
 
 .favorites ul {
   column-count: 4;
@@ -66,5 +61,20 @@ form label {
 }
 
 .results {
+  /* border: 1px solid whitesmoke; */
+  /* padding: 10px; */
   margin: auto;
+  margin-bottom: 30px;
+  /* border: 1px solid white; */
+  width: 800px;
+  height: 150px;
 }
+
+/* .results p {
+  float: right;
+} */
+
+/* results h4 {
+
+} */
+

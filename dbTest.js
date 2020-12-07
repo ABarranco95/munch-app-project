@@ -28,48 +28,49 @@ const API_KEY = process.env.API_KEY;
 
 
 
-const url = `https://api.documenu.com/v2/restaurants/zip_code/93638?key=${API_KEY}`;
-axios.get(url)
-.then(response => {
-    if (response.status === 200) {
-        // console.log(response.data.data);
-        let len = response.data.data.length;
-        for (let i = 0; i < len; i++) {
-            let searchResultObject = response.data.data[i];
-            // console.log(searchResultObject);
-            const searchRestObject = {
-                restaurant_id: searchResultObject.restaurant_id,
-                restaurantName: searchResultObject.restaurant_name,
-                address: searchResultObject.address.formatted,
-                phone: searchResultObject.restaurant_phone
+// const url = `https://api.documenu.com/v2/restaurants/zip_code/93638?key=${API_KEY}`;
+// axios.get(url)
+// .then(response => {
+//     if (response.status === 200) {
+//         // console.log(response.data.data);
+//         let len = response.data.data.length;
+//         for (let i = 0; i < len; i++) {
+//             let searchResultObject = response.data.data[i];
+//             // console.log(searchResultObject);
+//             const searchRestObject = {
+//                 restaurant_id: searchResultObject.restaurant_id,
+//                 restaurantName: searchResultObject.restaurant_name,
+//                 address: searchResultObject.address.formatted,
+//                 phone: searchResultObject.restaurant_phone
 
-            };
-            console.log(searchRestObject);
-            // db.favorites.findOrCreate({
-            //     where: { restaurant: searchRestObject.restaurant },
-            //     defaults: {
-            //         restaurant: searchRestObject.restaurant_name,
-            //         address: searchRestObject.address.formatted,
-            //         phone: searchRestObject.phone,
-            //     }
-            // }).then(([favorites, created]) => {
-            //     console.log(created);
-            //     res.render()
-            // })
-        }
-    }
-})
-.catch(err => {
-    console.log(err);
-});
-
-// db.favorites.findOrCreate({
-//     where: { restaurant: "Angel's Bar and Grill"},
-//     defaults: {
-//         address: '26658 W Cleveland',
-//         phone: '(559)999-9999',
+//             };
+//             console.log(searchRestObject);
+//             // db.favorites.findOrCreate({
+//             //     where: { restaurant: searchRestObject.restaurant },
+//             //     defaults: {
+//             //         restaurant: searchRestObject.restaurant_name,
+//             //         address: searchRestObject.address.formatted,
+//             //         phone: searchRestObject.phone,
+//             //     }
+//             // }).then(([favorites, created]) => {
+//             //     console.log(created);
+//             //     res.render()
+//             // })
+//         }
 //     }
-// }).then(([favorites, created]) => {
-//     console.log(created)
-//     console.log(favorites);
 // })
+// .catch(err => {
+//     console.log(err);
+// });
+
+db.favorites.findOrCreate({
+    where: {
+         restaurant: "Angel's Bar and Grill",
+         address: "561 W Cleveland Avenue",
+         phone: "(559)760-6651",
+         restaurantId: 9
+        },
+}).then(([favorites, created]) => {
+    console.log(created)
+    console.log(favorites);
+})

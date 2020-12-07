@@ -3,6 +3,7 @@ const express = require('express');
 const router = express.Router();
 const db = require('../models');
 const axios = require('axios');
+const isLoggedIn = require('../middleware/isLoggedIn');
 const API_KEY = process.env.API_KEY;
 
 router.get('/', (req, res) => {
@@ -23,7 +24,38 @@ router.get('/results', (req, res) => {
             
         });
         
+        
 })
+
+
+
+
+// router.post('/favorites', isLoggedIn, (req, res) => {
+//     const restaurant = req.body.restaurant_name;
+//     const address = req.body.address.formatted;
+//     const phone = req.body.restaurant_phone;
+//     const website = req.body.restaurant_website
+//     db.favorites.findOrCreate({
+//         where: {
+//             restaurant, address, phone, website
+//         }
+//     })
+//     .then(([favorite, created]) => {
+//         db.user.findOne({
+//             where: {
+//                 id: req.user.id
+//             }
+//         })
+//         .then(user => {
+//             user.addFavorite(favorite);
+//         res.redirect('/favorites'); 
+//         })
+//     })
+//     .catch((error) => {
+//         console.log(error);
+//         res.status(400);
+//     })
+// })
 // axios.get(`https://api.documenu.com/v2/restaurants/zip_code/${search}?key=${API_KEY}`)
 // .then(response => {
 //     if (response.status === 200) {

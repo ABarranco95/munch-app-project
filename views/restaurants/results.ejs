@@ -1,18 +1,18 @@
 <h3>Search Results:</h3>
+
+
 <% searchResultObject.forEach (restaurant => {%>
-<div class="results">
-    <form method="POST" action="/favorites"></form>
-        <ul>
-            <li><a href="<%= restaurant.restaurant_website %>"><%= restaurant.restaurant_name %></a></li>
-            <li><%= restaurant.restaurant_cuisines %></li>
-            <li><%= restaurant.address.formatted %></li>
-            <li><%= restaurant.restaurant_phone %></li>
-        </ul>
-
-        <input hidden type="text" value="<%= restaurant.restaurant_name %> ">
-        <button type="submit">Add to your favorites</button>
-    </form>
+    <div class="results">
+        <h4><a href="<%= restaurant.restaurant_website %>"><%= restaurant.restaurant_name %></a></h4>
+        <p><%= restaurant.restaurant_cuisines %></p>
+        <p><%= restaurant.address.formatted %></p>
+        <p><%= restaurant.restaurant_phone %></p>
+        
+        <form method="POST" action="/favorites">
+            <input hidden type="text" name='favRestaurants' value="<%= restaurant.restaurantId %> ">
+            <button type="submit">Add to your favorites</button>
+        </form>
 
 
-</div>
+    </div>
 <% }); %>
